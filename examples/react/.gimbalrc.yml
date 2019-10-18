@@ -1,7 +1,7 @@
 audits:
   - axe
   - size
-  # - lighthouse
+  - lighthouse
   - unused-source
   - heap-snapshot
   - source-map-explorer
@@ -45,16 +45,16 @@ plugins:
       - "!service-worker.js"
       - "!**/runtime*.js"
   - "@modus/gimbal-plugin-last-value"
-  - plugin: "@modus/gimbal-plugin-mysql"
-    enabled: ${env:CI, true, false}
-    commandPrefix:
-      - react-example-${env:GITHUB_REPOSITORY}-${env:GITHUB_REF}
-      - react-example
-    lastValue:
-      database: gimbal_github
-    host: ${env:GIMBAL_MYSQL_HOST}
-    password: ${env:GIMBAL_MYSQL_PASSWORD}
-    user: ${env:GIMBAL_MYSQL_USERNAME}
+  # - plugin: "@modus/gimbal-plugin-mysql"
+  #   enabled: ${env:CI, true, false}
+  #   commandPrefix:
+  #     - react-example-${env:GITHUB_REPOSITORY}-${env:GITHUB_REF}
+  #     - react-example
+  #   lastValue:
+  #     database: gimbal_github
+  #   host: ${env:GIMBAL_MYSQL_HOST}
+  #   password: ${env:GIMBAL_MYSQL_PASSWORD}
+  #   user: ${env:GIMBAL_MYSQL_USERNAME}
 # - plugin: '@modus/gimbal-plugin-sqlite'
 #   enabled: ${env:CI, true, false}
 #   commandPrefix:
