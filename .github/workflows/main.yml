@@ -13,33 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Install
-        uses: nuxt/actions-yarn@master
-        with:
-          args: install
-      - name: Lint
-        uses: nuxt/actions-yarn@master
-        with:
-          args: lint
-      - name: Test
-        uses: nuxt/actions-yarn@master
-        with:
-          args: test
-      - name: Build
-        uses: nuxt/actions-yarn@master
-        with:
-          args: build
-      - name: Build Examples
-        uses: nuxt/actions-yarn@master
-        with:
-          args: build:examples
-      - name: Test Examples
-        # uses: ianwalter/puppeteer@v2.0.0
-        uses: ./.github/workflows/test-action
-        with:
-          args: yarn test:examples
-        env:
-          GIMBAL_MYSQL_HOST: ${{ secrets.GIMBAL_MYSQL_HOST }}
-          GIMBAL_MYSQL_PASSWORD: ${{ secrets.GIMBAL_MYSQL_PASSWORD }}
-          GIMBAL_MYSQL_USERNAME: ${{ secrets.GIMBAL_MYSQL_USERNAME }}
-          GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: printenv
